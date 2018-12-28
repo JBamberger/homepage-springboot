@@ -1,0 +1,74 @@
+body {
+    text-align: center;
+    background: #388E3C;
+    color: #ffffff;
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.gdpr-subhead {
+}
+
+.gdpr-paragraph {
+    text-align: justify;
+    word-wrap: break-word;
+    align-self: center;
+}
+
+a, a:visited {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav > ul > li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 10px;
+}
+
+.main-header {
+    font-size: 3em;
+}
+
+.main-list > li > a {
+    font-size: 2em;
+}
+
+.main-list {
+    list-style-type: none;
+}
+
+.main-list > li {
+    margin: 32px;
+}
+
+.about-me-profile-img {
+    width: 128px;
+}
+
+.gdpr {
+    padding: 32px;
+}
+
+footer > ul > li {
+    padding: 8px 32px;
+    display: inline-block;
+    list-style-type: none;
+}
+
+.footer-gdpr {
+    font-size: 1em;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 32px;
+}

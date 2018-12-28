@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, content)">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <title th:replace="${title}">Template Title</title>
+</head>
+<body>
+<header>
+    <nav th:if="${not #lists.isEmpty(pages)}">
+        <ul>
+            <li th:each="page : ${pages}">
+                <a th:href="@{'/' + ${page.slug}}" th:text="${page.title}">Page title</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main th:insert="${content}">
+    Content
+</main>
+<footer>
+    <address>
+        &copy; Copyright 2018 by <a th:href="'mailto:' + ${owner.mail}" th:text="${owner.fullname}">Link text</a><br>
+    </address>
+</footer>
+</body>
+</html>
