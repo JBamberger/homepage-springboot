@@ -32,7 +32,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h2-console").hasRole("ADMIN")
                 .mvcMatchers("/", "/privacy_policy").permitAll()
                 .antMatchers("/css/**", "/js/**", "/img/**", "/error/**").permitAll()
-                .antMatchers("/**").denyAll()
                 .and().httpBasic();
     }
 }

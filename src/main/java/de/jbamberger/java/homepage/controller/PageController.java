@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
 
@@ -33,19 +34,13 @@ public class PageController {
         return "privacy_policy";
     }
 
-    @GetMapping("/404")
-    public String error404() {
-        return "error/404";
-    }
-
-    @RequestMapping(path = "/500")
-    public String error500() {
-        return "error/500";
-    }
-
     @RequestMapping(path = "/throw")
     public String throwException() {
         throw new RuntimeException("This is an internal server error!");
     }
 
+    @GetMapping("favicon.ico")
+    @ResponseBody
+    void returnNoFavicon() {
+    }
 }
