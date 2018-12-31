@@ -31,7 +31,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ADMIN")
                 .antMatchers("/h2-console").hasRole("ADMIN")
                 .mvcMatchers("/", "/privacy_policy").permitAll()
-                .antMatchers("/css/**", "/js/**", "/img/**", "/error/**").permitAll()
-                .and().httpBasic();
+                .antMatchers("/css/**", "/js/**", "/img/**", "/error/**").permitAll();
+        http.httpBasic();
+        http.headers().frameOptions().sameOrigin();
     }
 }

@@ -31,11 +31,11 @@ apply plugin: 'io.spring.dependency-management'
 remotes {
     webServer {
         host = '5.1.89.111'
-        user = 'jannik'
+        user = 'deployment'
         port = 2710
         identity = file("${System.properties['user.home']}/.ssh/id_rsa")
         passphrase = server_5_1_89_111_ssh_passphrase
-        sudoPassword = server_5_1_89_111_user_jannik_passphrase
+        sudoPassword = server_5_1_89_111_user_deployment_passphrase
         errorStream = System.err
         outputStream = System.out
     }
@@ -45,7 +45,7 @@ group = 'de.jbamberger.java'
 version = rootProject.file('VERSION').text.trim()
 
 
-def remote_dir = '/home/jannik/homepage'
+def remote_dir = '/var/www/homepage'
 def local_dir = 'build/libs'
 def deploy_file = "homepage-${version}.jar"
 
