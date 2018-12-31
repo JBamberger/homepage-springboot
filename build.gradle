@@ -33,8 +33,8 @@ remotes {
         host = '5.1.89.111'
         user = 'deployment'
         port = 2710
-        identity = file("${System.properties['user.home']}/.ssh/id_rsa")
-        passphrase = server_5_1_89_111_ssh_passphrase
+        identity = file("${System.properties['user.home']}/.ssh/deployment")
+        passphrase = server_5_1_89_111_key_deployment_passphrase
         sudoPassword = server_5_1_89_111_user_deployment_passphrase
         errorStream = System.err
         outputStream = System.out
@@ -99,7 +99,7 @@ task('deploy') {
             session(remotes.webServer) {
                 put from: "${projectDir}/${local_dir}/${deploy_file}", into: remote_dir
                 execute "ln -sf ${remote_dir}/${deploy_file} ${remote_dir}/homepage.jar"
-                executeSudo('systemctl restart homepage', pty: true)
+                executeSudo('systemctl restart homepage.service', pty: true)
             }
         }
     }
